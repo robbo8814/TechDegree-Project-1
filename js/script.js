@@ -81,8 +81,9 @@ function printQuote() {
   }
   currQuote += '</p>'   // Put the final line break before the url to make it display better on the page
   if (newQuote.url) {    // If url property exists, add the url to the currQuote variable
-    currQuote += `<p><a href=${newQuote.url} target="blank" id="url" class="url"> More quotes from this Author </a></p>`;   // Creating a url link to the quote's source
-  }
+    currQuote += `<p><a href=${newQuote.url} target="blank" class="url"> More quotes from this Author </a></p>`;   // Creating a url link to the quote's source
+  }   // If preferred to have the url displayed in the same way as the citation & year, I just have to remove the p tags in line 84, and then move line 82 (closing p tag) to after this if statement code (83 & 84) inserting the url into the currQuote variable (aka move to line 86)
+
   document.getElementById('quote-box').innerHTML = `${currQuote}`;    // add the contents of currQuote to the html within the quote-box div
     // Random Background Color also set by function
 document.body.style.backgroundColor = "rgb(" + randomNumber(255) + "," + randomNumber(255) + "," + randomNumber(255) + ")";
